@@ -1,0 +1,89 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+
+    .blog-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+      margin: 20px;
+    }
+
+    .blog-box {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 10px;
+      padding: 20px;
+      width: 300px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    p {
+      color: #555;
+    }
+
+    button {
+      background-color: #ff5555;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .new-blog-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    a {
+      color: #ff5555;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Awesome Blog</h1>
+  </header>
+
+  <div class="blog-container">
+    <% blogs.forEach(blog => { %>
+      <div class="blog-box">
+        <h2><%= blog.title %></h2>
+        <p><%= blog.content %></p>
+      </div>
+    <% }); %>
+  </div>
+
+  <div class="new-blog-button">
+    <a href="/new"><button>New Blog</button></a>
+  </div>
+</body>
+</html>
